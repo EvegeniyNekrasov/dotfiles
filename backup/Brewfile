@@ -1,0 +1,4 @@
+tap "homebrew/bandle"
+brew "starship"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
