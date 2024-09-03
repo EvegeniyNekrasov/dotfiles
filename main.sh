@@ -13,10 +13,10 @@ DOTFILES_DIR=$(pwd)
 CONFIG_DIR="$HOME/.config"
 
 # Create necessary directories
-mkdir -p $CONFIG_DIR/wezterm/colors
+mkdir -p $CONFIG_DIR/wezterm
 mkdir -p $CONFIG_DIR/starship
 
-cp -R -p -i $DOTFILES_DIR/wezterm/wezterm.lua $CONFIG_DIR/wezterm/
+cp -R -p -i $DOTFILES_DIR/wezterm/* $CONFIG_DIR/wezterm/
 cp -R -p -i $DOTFILES_DIR/wezterm/colors/tokyonight_night.toml $CONFIG_DIR/wezterm/colors/
 
 # Copy starship.toml directly to .config

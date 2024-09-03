@@ -8,7 +8,7 @@ alias uninstall="brew uninstall --zap"
 
 # Navigation aliases
 alias ..="cd .."
-asias ...="cd ../.."
+alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias gh="cd"
