@@ -14,9 +14,10 @@ alias .....="cd ../../../.."
 alias gh="cd"
 alias gc="cd ~/.config"
 alias gp="cd ~/Desktop/Projects/"
+alias gpd="cd ~/Desktop/Projects/dotfiles/"
 
 # File listing aliases
-alias ll="eza -l --icons"
+alias l="eza -l --icons"
 alias la="eza -la --icons"
 alias t="eza -T --icons"
 alias LA="ll --sort=acc"

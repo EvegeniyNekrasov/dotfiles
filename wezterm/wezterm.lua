@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm'
+
 return {
-	color_scheme = 'Catppuccin Mocha',
+	color_scheme = "custom",
 	enable_tab_bar = false,
 	font_size = 16.0,
 	font = wezterm.font('Geist Mono'),

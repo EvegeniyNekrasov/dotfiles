@@ -1,41 +1,109 @@
-format = """
-[$directory](bold cyan)($git_branch$git_state$git_status$git_metrics)
-$time $hostname $username [»](bold green) """
+# Starship configuration for a futuristic yet super clean setup
 
+# Character settings for a sleek and futuristic prompt
+[character]
+success_symbol = "[➤](bold cyan)"  # Cyan arrow for successful commands
+error_symbol = "[✖](bold red)"     # Red cross for errors
+
+# Git branch module with a futuristic look
 [git_branch]
-style = "bold green"
-format = "[\\[[$symbol$branch$tag](bold green)\\]](bold white)"
-symbol = "\ue725 "
+format = "[$branch]($style) "
+style = "bold bright-blue"  # Bright blue for a techy feel
+truncation_length = 2  # Truncate branch names to keep things concise
 
+# Git commit module showing the shortened commit hash in a cool tone
+[git_commit]
+commit_hash_length = 7
+style = "dimmed bright-cyan"
+
+# Git state module with subtle, futuristic notifications
+[git_state]
+rebase = "REBASING"
+merge = "MERGING"
+style = "dimmed bright-blue"
+
+# Git status module for a sleek and minimalistic display
 [git_status]
-format = ' ([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\]]($style))'
+format = "[$all_status$ahead_behind]($style) "
+style = "dimmed bright-cyan"
+conflicted = "⚠️ "
+stashed = "📦 "
+modified = "✎ "
+staged = "✔️ "
+renamed = "✎ "
+deleted = "❌ "
+untracked = "📝 "
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
 
+# Time module to display the current time in a sleek, non-intrusive color
+[time]
+disabled = false
+format = "[$time](dimmed bright-cyan)"
+time_format = "%H:%M:%S"
+
+# Directory module for a clean, techy look
 [directory]
-style = "bold cyan"
-truncate_to_repo = false
-truncation_length = 1
-fish_style_pwd_dir_length = 1
+truncation_length = 2  # Show only the immediate directory
+style = "bold bright-white"
+truncation_symbol = "…/"
 
+# Node.js module for displaying version with a futuristic icon
+[nodejs]
+format = "via [⬢ $version](bold bright-green) "
+disabled = false
+
+# Python module with a cool, discreet format
 [python]
-scan_for_pyfiles = false
+format = "via [🐍 $version](bold bright-blue) "
+disabled = false
 
-[ruby]
+# Command duration module for highlighting long-running commands
+[cmd_duration]
+min_time = 2000  # 2 seconds
+format = "[$duration](dimmed bright-yellow)"
+
+# Shell module with a subtle, futuristic style
+[shell]
+disabled = false
+format = "[$shell](dimmed bright-magenta) "
+
+# Battery status module for displaying battery status in a futuristic way
+[battery]
+disabled = false
+format = "[$symbol$percentage](bold bright-green) "
+charging_symbol = "⚡️"
+discharging_symbol = "🔋"
+
+# Kubernetes context module for professionals working with clusters
+[kubernetes]
+format = "[$symbol $context](bold bright-cyan)"
+symbol = "⎈ "
+
+# Status module for a minimal and clean error display
+[status]
+style = "bold red"
+symbol = "✖ "
+
+# Disable unnecessary modules for a clean prompt
+[docker_context]
 disabled = true
 
-[swift]
+[gcloud]
 disabled = true
 
 [hostname]
-ssh_only = false
-format = "[$hostname]($style)"
-style = "bold white"
+disabled = true
 
-[username]
-show_always = true
-style_user = "bold white"
-format = "[$user]($style)"
+[java]
+disabled = true
 
-[time]
+[rust]
+disabled = true
+
+# Custom newline for a futuristic separator
+[line_break]
+format = "\n"
 disabled = false
-format = "[$time]($style)"
-time_format = "%H:%M"
+
