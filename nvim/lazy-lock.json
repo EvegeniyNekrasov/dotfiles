@@ -1,10 +1,10 @@
 {
-  "kanagawa.nvim": { "branch": "master", "commit": "f491b0fe68fffbece7030181073dfe51f45cda81" },
   "lazy.nvim": { "branch": "main", "commit": "460e1cd8f24e364d54543a4b0e83f6f4ec1f65fb" },
   "lualine.nvim": { "branch": "master", "commit": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "25c11854aa25558ee6c03432edfa0df0217324be" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "29f7c215332ba95e470811c380ddbce2cebe2af4" },
+  "nordic.nvim": { "branch": "main", "commit": "03fcff3c8d68049b8118047784746048b4a08049" },
   "nui.nvim": { "branch": "main", "commit": "b58e2bfda5cea347c9d58b7f11cf3012c7b3953f" },
   "nvim-lspconfig": { "branch": "master", "commit": "f4fef355efa3c5d0813512480ee7b2c050b09fe4" },
   "nvim-treesitter": { "branch": "master", "commit": "929ca9c76ee20bb27cffbde4ee90583b6c54d616" },
