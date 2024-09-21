@@ -17,6 +17,13 @@ alias gp="cd ~/Desktop/Projects/"
 alias gpd="cd ~/Desktop/Projects/dotfiles/"
 alias gd="cd ~/Desktop/"
 
+# Git
+alias gc="git commit -m"
+alias gs="git status"
+alias gp="git push"
+alias gpo="git push origin"
+alias ga="git add"
+
 # File listing aliases
 alias ll="eza -l --icons"
 alias la="eza -la --icons"
