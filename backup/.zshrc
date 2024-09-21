@@ -15,15 +15,18 @@ alias gh="cd"
 alias gc="cd ~/.config"
 alias gp="cd ~/Desktop/Projects/"
 alias gpd="cd ~/Desktop/Projects/dotfiles/"
+alias gd="cd ~/Desktop/"
 
 # File listing aliases
-alias l="eza -l --icons"
+alias ll="eza -l --icons"
 alias la="eza -la --icons"
 alias t="eza -T --icons"
 alias LA="ll --sort=acc"
 alias LS="ll --sort=size"
 # Init startship
 eval "$(starship init zsh)"
+
+export PATH="$HOME/.volta/bin:$PATH"
 
 # Zsh plugins
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

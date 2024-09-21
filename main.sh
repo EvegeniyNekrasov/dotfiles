@@ -16,10 +16,15 @@ CONFIG_DIR="$HOME/.config"
 mkdir -p $CONFIG_DIR/wezterm
 mkdir -p $CONFIG_DIR/starship
 mkdir -p $CONFIG_DIR/zellij
+mkdir -p $CONFIG_DIR/nvim
+mkdir -p $CONFIG_DIR/tmux
 
+cp -R -p $DOTFILES_DIR/tmux/* $CONFIG_DIR/tmux
 cp -R -p -i $DOTFILES_DIR/wezterm/* $CONFIG_DIR/wezterm/
 cp -R -p -i $DOTFILES_DIR/wezterm/colors/tokyonight_night.toml $CONFIG_DIR/wezterm/colors/
 cp -R -p -i $DOTFILES_DIR/zellij/* $CONFIG_DIR/zellij
+cp -R -p $DOTFILES_DIR/nvim/* $CONFIG_DIR/nvim
+
 # Copy starship.toml directly to .config
 cp -R -p -i $DOTFILES_DIR/starship/starship.toml $CONFIG_DIR/
 

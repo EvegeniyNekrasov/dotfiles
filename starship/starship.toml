@@ -9,7 +9,7 @@ error_symbol = "[✖](bold red)"     # Red cross for errors
 [git_branch]
 format = "[$branch]($style) "
 style = "bold bright-blue"  # Bright blue for a techy feel
-truncation_length = 2  # Truncate branch names to keep things concise
+truncation_length = 30  # Truncate branch names to keep things concise
 
 # Git commit module showing the shortened commit hash in a cool tone
 [git_commit]
