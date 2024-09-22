@@ -1,51 +1,51 @@
 return {
   {
-    'williamboman/mason.nvim',
+    "williamboman/mason.nvim",
+    lazy = false,
     config = function()
-      require("mason").setup({
-        ui = {
-          icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-          }
-        }
-      })
-    end
+      require("mason").setup()
+    end,
   },
   {
-    'williamboman/mason-lspconfig.nvim',
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          'cssls',
-          'tailwindcss',
-          'html',
-          'lua_ls',
-          'ts_ls',
-          'tsp_server',
-          'biome'
-        }
-      })
-    end
+    "williamboman/mason-lspconfig.nvim",
+    lazy = false,
+    opts = {
+      auto_install = true,
+    },
   },
   {
-    'neovim/nvim-lspconfig',
+    "neovim/nvim-lspconfig",
+    lazy = false,
     config = function()
-      -- creating a lspconfig
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
       local lspconfig = require("lspconfig")
-      -- settingup lspservers
-      lspconfig.cssls.setup({})
-      lspconfig.tailwindcss.setup({})
-      lspconfig.html.setup({})
-      lspconfig.lua_ls.setup({})
-      lspconfig.ts_ls.setup({})
-      lspconfig.tsp_server.setup({})
-      lspconfig.biome.setup({})
-      -- adding keymaps
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
-    end
-  }
+      lspconfig.ts_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.solargraph.setup({
+        capabilities = capabilities
+      })
+      lspconfig.html.setup({
+        capabilities = capabilities
+      })
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.csharp_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.angularls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.rust_analyzer.setup({
+        capabilities = capabilities
+      })
+
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+    end,
+  },
 }

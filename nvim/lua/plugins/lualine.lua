@@ -3,7 +3,7 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        theme = "nordic",
+        theme = "ayu_dark",
       }
     }) 
   end
