@@ -55,3 +55,40 @@ end
 
 vim.api.nvim_create_user_command("Lazygit", open_lazygit, { desc = "Open lazygit" })
 map("n", "<leader>gg", open_lazygit, { silent = true, desc = "Open lazygit" })
+
+
+local tasks = require("config.tasks")
+
+vim.api.nvim_create_user_command("Build", tasks.build, {
+    desc = "Compile proyect"
+})
+
+vim.api.nvim_create_user_command("Run", tasks.run, {
+    desc = "Execute project"
+})
+
+vim.api.nvim_create_user_command("Test", tasks.test, {
+    desc = "Execute tests"
+})
+
+vim.api.nvim_create_user_command("Task", function(options)
+    tasks.task(options.args)
+end, {
+    nargs = "+",
+    desc = "Execute command in root of the project"
+})
+
+map("n", "<leader>mb", tasks.build, {
+    silent = true,
+    desc = "Compile proyect"
+})
+
+map("n", "<leader>mr", tasks.run, {
+    silent = true,
+    desc = "Execute proyect" 
+})
+
+map("n", "<leader>mt", tasks.test, {
+    silent = true,
+    desc = "Execute tests"
+})

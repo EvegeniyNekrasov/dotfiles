@@ -34,7 +34,7 @@ opt.backup = 		false
 
 -- Performance
 opt.updatetime =	250
-opt.timeoutlen = 	300
+opt.timeoutlen = 	1000
 
 -- Mouse
 opt.mouse = 		"a"
