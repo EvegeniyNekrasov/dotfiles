@@ -4,7 +4,8 @@ return {
     lazy = true,
     ft = "markdown",
     dependencies = {
-        "nvim-lua/plenary.nvim"
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
     },
     opts = {
         workspaces = {
@@ -16,6 +17,6 @@ return {
         completion = {
             nvim_cmp = true,
             min_chars = 2
-        }
+        },
     }
 }
