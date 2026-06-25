@@ -38,3 +38,11 @@ opt.timeoutlen = 	300
 
 -- Mouse
 opt.mouse = 		"a"
+
+
+-- Autocomplete
+opt.completeopt = {
+    "menuone",
+    "noselect",
+    "popup"
+}
