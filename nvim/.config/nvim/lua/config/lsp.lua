@@ -62,9 +62,33 @@ vim.api.nvim_create_autocmd("LspAttach", {
                 }
             )
         end
+
+        -- Formatting on save
+        if client:supports_method("textDocument/formatting") then
+            local format_group = vim.api.nvim_create_augroup(
+                "user-lsp-format" .. event.buf,
+                { clear = true }
+            )
+
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = fromat_group,
+                buffer = event.buf,
+
+                callback = function(args) 
+                    vim.lsp.buf.format({
+                        bufnr = args.buf,
+                        id = client.id,
+                        async = false,
+                        timeout_ms = 2000
+                    })
+                end
+            })  
+        end
     end
 })
 
 
 -- Activate servers
 vim.lsp.enable({ "clangd", "rust_analyzer" })
+
+
