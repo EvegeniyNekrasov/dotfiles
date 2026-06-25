@@ -17,6 +17,7 @@ So the minimal here is a minimal configuration for:
 
 Everything is managed by GNU Stow
 
+```mermaid
 flowchart TD
     A[dotfiles/] --> B[nvim/]
     A --> C[tmux/]
@@ -31,6 +32,7 @@ flowchart TD
     D --> D1[".config/"]
     D1 --> D2[alacritty/]
     D2 --> D3[alacritty.toml]
+```
         
 Each directory is independent Stow package
 
