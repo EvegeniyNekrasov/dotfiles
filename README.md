@@ -17,14 +17,20 @@ So the minimal here is a minimal configuration for:
 
 Everything is managed by GNU Stow
 
-dotfiles/ 
-├── nvim/ 
-│ └── .config/nvim/ 
-├── tmux/ 
-│ └── .config/tmux/ 
-└── alacritty/ 
-    └── .config/alacritty/ 
-        └── alacritty.toml
+flowchart TD
+    A[dotfiles/] --> B[nvim/]
+    A --> C[tmux/]
+    A --> D[alacritty/]
+
+    B --> B1[".config/"]
+    B1 --> B2[nvim/]
+
+    C --> C1[".config/"]
+    C1 --> C2[tmux/]
+
+    D --> D1[".config/"]
+    D1 --> D2[alacritty/]
+    D2 --> D3[alacritty.toml]
         
 Each directory is independent Stow package
 
