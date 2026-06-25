@@ -1,0 +1,27 @@
+[font]
+size = 18.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[window.padding]
+x = 10
+y = 5
+
+[window]
+opacity = 0.95
+option_as_alt = "OnlyLeft"
+
+[general]
+live_config_reload = true
