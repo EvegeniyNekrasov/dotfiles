@@ -1,5 +1,19 @@
 local M = {}
 
+local frontend_filetypes = {
+    html = true,
+    css = true,
+    scss = true,
+    less = true,
+    javascript = true,
+    javascriptreact = true,
+    typescript = true,
+    typescriptreact = true,
+    json = true,
+    jsonc = true
+}
+
+
 -- Utils
 local function notify(message, level)
     vim.notify(message, level or vim.log.levels.INFO)
@@ -61,6 +75,10 @@ local function project_type()
         return "c"
     end
 
+    if frontend_fyletypes[filetype] then
+        return "frontend"
+    end
+
     return nil
 end
 
@@ -80,6 +98,17 @@ local function c_root()
     })
 end
 
+local function frontend_root()
+    return find_root({
+        "pnpm-lock.yaml",
+        "package-lock.json",
+        "yarn.lock",
+        "bun.lock",
+        "package.json",
+        ".git"
+    })
+end
+
 local function has_file(root, names)
     for _, name in ipairs(names) do
         if vim.uv.fs_stat(vim.fs.joinpath(root, name)) then
@@ -93,6 +122,11 @@ end
 -- Build
 function M.build()
     local kind = project_type()
+
+    if kind == "frontend" then
+        run_in_terminal("npm build", frontend_root())
+        return
+    end
 
     if kind == "rust" then
         run_in_terminal("cargo build", rust_root())
@@ -149,6 +183,11 @@ end
 -- Run
 function M.run()
     local kind = project_type()
+
+    if kind == "frontend" then
+        run_in_terminal("npm run dev", frontend_root())
+        return
+    end
 
     if kind == "rust" then
         run_in_terminal("cargo run", rust_root())
@@ -211,6 +250,11 @@ end
 function M.test()
     local kind = project_type()
 
+    if kind == "frontend" then
+        run_in_terminal("npm run test", frontend_root())
+        return
+    end
+
     if kind == "rust" then
         run_in_terminal("cargo test", rust_root())
         return
@@ -244,12 +288,24 @@ function M.task(command)
         return
     end
 
+    local kind = project_type()
     local root
 
-    if project_type() == "rust" then
+    if kind == "rust" then
         root = rust_root()
-    else
+    elseif kind == "frontend" then
+        root = frontend_root()
+    elseif kind == "c" then
         root = c_root()
+    else
+        root = find_root({
+            "package.json",
+            "Cargo.toml",
+            "Makefile",
+            "makefile",
+            "CMakeLists.txt",
+            ".git",
+        })
     end
 
     run_in_terminal(command, root)

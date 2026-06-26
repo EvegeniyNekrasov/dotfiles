@@ -89,6 +89,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 
 -- Activate servers
-vim.lsp.enable({ "clangd", "rust_analyzer" })
+vim.lsp.enable({ 
+    "clangd", 
+    "rust_analyzer",
+    "ts_ls",
+    "html",
+    "cssls",
+    "jsonls"
+})
 
 
