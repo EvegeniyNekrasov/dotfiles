@@ -1,0 +1,36 @@
+theme "kanagawa"
+default_layout "compact"
+
+pane_frames true
+
+// to select and redimention panes with mouse
+mouse_mode true
+
+// copy text on select
+copy_on_select true
+
+scroll_buffer_size 10000
+
+auto_layout true
+
+on_force_close "detach"
+
+simplified_ui false
+
+show_startup_tips false
+show_release_notes false
+visual_bell false
+
+
+ui {
+    pane_frames {
+        rounded_corners true
+        hide_session_name true
+    }
+}
+
+plugins {
+    compact_bar location="zellij:compact-bar" {
+        tooltip "F1"
+    } 
+}

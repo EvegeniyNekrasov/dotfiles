@@ -14,6 +14,7 @@ So the minimal here is a minimal configuration for:
 - Neovim
 - tmux
 - Alacritty
+- Zellij
 
 Everything is managed by GNU Stow
 
@@ -22,6 +23,7 @@ flowchart TD
     A[dotfiles/] --> B[nvim/]
     A --> C[tmux/]
     A --> D[alacritty/]
+    A --> E[zellij/]
 
     B --> B1[".config/"]
     B1 --> B2[nvim/]
@@ -32,6 +34,10 @@ flowchart TD
     D --> D1[".config/"]
     D1 --> D2[alacritty/]
     D2 --> D3[alacritty.toml]
+
+    E --> E1["./config/"]
+    E1 --> E2[zellij/]
+    E2 --> E3[config.kdl]
 ```
         
 Each directory is independent Stow package
