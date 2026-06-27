@@ -95,7 +95,8 @@ vim.lsp.enable({
     "ts_ls",
     "html",
     "cssls",
-    "jsonls"
+    "jsonls",
+    "lua_ls"
 })
 
 
