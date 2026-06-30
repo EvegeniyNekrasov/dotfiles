@@ -2,6 +2,7 @@
   "gitsigns.nvim": { "branch": "main", "commit": "a462f416e2ce4744531c6256252dee99a7d34a83" },
   "gruvbox.nvim": { "branch": "main", "commit": "154eb5ff5b96d0641307113fa385eaf0d36d9796" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
+  "mermaid.nvim": { "branch": "main", "commit": "20e0b92cf1ed5ce24cbc4c084f3f9f828e88606f" },
   "mini.pairs": { "branch": "main", "commit": "4a014143fcb4e9df26198ccb3ecff3b9e77a048c" },
   "mini.pick": { "branch": "main", "commit": "8c1f75f8ddd8c9f75d07ed2ab5718d2c3cb65a66" },
   "nvim-cmp": { "branch": "main", "commit": "a1d504892f2bc56c2e79b65c6faded2fd21f3eca" },
