@@ -18,5 +18,12 @@ return {
             nvim_cmp = true,
             min_chars = 2
         },
-    }
+    },
+    dayly_notes = {
+        folder = "notes/dailies",
+        date_format = "%Y-%m-%d",
+        default_tags = { "daily-notes" },
+        template = nil
+    },
+    disable_frontmatter = false,
 }
