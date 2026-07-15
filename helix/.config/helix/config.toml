@@ -1,13 +1,26 @@
-theme = "carbon"
+theme = "glass-dark"
 
 [editor]
 true-color = true
+color-modes = true
+cursorline = true
 line-number = "relative"
-mouse = false
+bufferline = "multiple"
+popup-border = "all"
+gutters = ["diagnostics", "line-numbers", "spacer"]
 
 [editor.cursor-shape]
-insert = "bar"
 normal = "block"
+insert = "bar"
 select = "underline"
 
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-modification-indicator"]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding"]
+separator = "│"
 
+[editor.indent-guides]
+render = true
+character = "╎"
+skip-levels = 1
