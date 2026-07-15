@@ -1,6 +1,7 @@
-theme = "onedark"
+theme = "carbon"
 
 [editor]
+true-color = true
 line-number = "relative"
 mouse = false
 
